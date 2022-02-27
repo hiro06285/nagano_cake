@@ -13,7 +13,7 @@
     <header>
       <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
-          <%= link_to "NaganoCake", admin_root_path, class: "text-light" %>
+          <%= link_to "NaganoCake", admin_root_path, class: "text-dark" %>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -28,8 +28,8 @@
               <% else %>
                 <%= 'About' %>
                 <%= '商品一覧' %>
-                <%= link_to '新規登録', new_admin_registration_path %>
-                <%= link_to 'ログイン', new_admin_session_path, class: "btn btn-default" %>
+                <%= link_to '新規登録', new_admin_registration_path, class: "btn btn-outline-dark" %>
+                <%= link_to 'ログイン', new_admin_session_path, class: "btn btn-outline-dark" %>
               <% end %>
             </ul>
           </div>
