@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 2022_02_27_073607) do
     t.string "image_id"
     t.text "introduction"
     t.integer "non_taxed_price"
-    t.boolean "sales_stat"
+    t.boolean "sales_status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
