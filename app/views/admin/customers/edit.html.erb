@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 offset-md-1">
+      <h3><%= @customer.last_name %><%= @customer.first_name %>さんの会員情報編集</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+      <%= form_with model: @customer, url: admin_customer_path, local:true do |f| %>
+        <h6>会員ID</h6>
+        <%= @customer.id %>
+        <h6>氏名</h6>
+        <%= f.text_field :last_name %>
+        <%= f.text_field :first_name %>
+        <h6>フリガナ</h6>
+        <%= f.text_field :last_name_kana %>
+        <%= f.text_field :first_name_kana %>
+        <h6>郵便番号</h6>
+        <%= f.text_field :postal_code %>
+        <h6>住所</h6>
+        <%= f.text_field :address %>
+        <h6>電話番号</h6>
+        <%= f.telephone_field :telephone_number %>
+        <h6>メールアドレス</h6>
+        <%= f.email_field :email %>
+        <h6>会員ステータス</h6>
+        <%= f.radio_button :status, "true" %>
+        <%= f.label :status, '有効', value: true %>
+        <%= f.radio_button :status, "false" %>
+        <%= f.label :status, '退会', value: false %><br>
+        <%= f.submit '変更を保存', class: "btn btn-success" %>
+      <% end %>
+    </div>
+  </div>
+</div>
