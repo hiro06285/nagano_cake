@@ -20,14 +20,14 @@
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ml-auto">
               <% if admin_signed_in? %>
-                <%= '商品一覧' %>
-                <%= '会員一覧' %>
+                <%= link_to '商品一覧', admin_items_path, class: "btn btn-outline-dark" %>
+                <%= link_to '会員一覧', admin_customers_path, class: "btn btn-outline-dark" %>
                 <%= '注文履歴一覧' %>
-                <%= link_to 'ジャンル一覧', admin_genres_path, class: "btn btn-default" %>
-                <%= link_to 'ログアウト', destroy_admin_session_path, method: :delete, class: "btn btn-default" %>
+                <%= link_to 'ジャンル一覧', admin_genres_path, class: "btn btn-outline-dark" %>
+                <%= link_to 'ログアウト', destroy_admin_session_path, method: :delete, class: "btn btn-outline-dark" %>
               <% else %>
                 <%= 'About' %>
-                <%= '商品一覧' %>
+                <%= link_to '商品一覧',admin_items_path, class: "btn btn-outline-dark" %>
                 <%= link_to '新規登録', new_admin_registration_path, class: "btn btn-outline-dark" %>
                 <%= link_to 'ログイン', new_admin_session_path, class: "btn btn-outline-dark" %>
               <% end %>

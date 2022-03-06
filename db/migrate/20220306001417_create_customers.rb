@@ -6,11 +6,11 @@ class CreateCustomers < ActiveRecord::Migration[5.2]
       t.string  :last_name_kana
       t.string  :first_name_kana
       t.string  :email
-      t.string  :encryped_password
+      t.string  :encrypted_password
       t.string  :postal_code
       t.string  :address
       t.string  :telephone_number
-      t.boolean :status
+      t.boolean :status, default: true
 
       t.timestamps
     end

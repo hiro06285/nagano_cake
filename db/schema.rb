@@ -30,11 +30,11 @@ ActiveRecord::Schema.define(version: 2022_03_06_001417) do
     t.string "last_name_kana"
     t.string "first_name_kana"
     t.string "email"
-    t.string "encryped_password"
+    t.string "encrypted_password"
     t.string "postal_code"
     t.string "address"
     t.string "telephone_number"
-    t.boolean "status"
+    t.boolean "status", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
