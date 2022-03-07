@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     resources :genres, only: [:index, :create, :edit, :update]
     resources :items, only: [:index, :new, :create, :show, :edit, :update]
   end
-  
+
   root 'homes#top'
+  get 'about' => 'homes#about'
 end
