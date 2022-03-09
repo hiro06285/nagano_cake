@@ -21,4 +21,5 @@ Rails.application.routes.draw do
 
   root 'homes#top'
   get 'about' => 'homes#about'
+  resources :customers, only: [:show, :edit, :update, :unsubscribe, :withdraw]
 end
