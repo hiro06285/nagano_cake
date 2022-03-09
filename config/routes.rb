@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
-  get 'homes/top'
+
+  devise_for :customers, controllers: {
+    sessions: 'customers/sessions',
+    passwords: 'customers/passwords',
+    registrations: 'customers/registrations'
+  }
+
   devise_for :admin, controllers: {
     sessions: 'admin/sessions',
     passwords: 'admin/passwords',
