@@ -4,6 +4,7 @@ class CustomersController < ApplicationController
   end
 
   def edit
+    @customer = current_customer
   end
 
   def update

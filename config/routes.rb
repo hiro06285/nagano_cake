@@ -22,6 +22,6 @@ Rails.application.routes.draw do
   root 'homes#top'
   get 'about' => 'homes#about'
   get 'customers/my-page' => 'customers#show'
-  get 'customers/edit' => 'customers#edit'
-  resources :customers, only: [:update, :unsubscribe, :withdraw]
+  get 'customers/sign_in' => 'customers#unsubscribe'
+  resource :customers, only: [:edit, :update, :withdraw]
 end
