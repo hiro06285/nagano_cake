@@ -4,7 +4,9 @@ Rails.application.routes.draw do
     root 'homes#top'
     get 'about' => 'homes#about'
     get 'customers/my-page' => 'customers#show'
-    resource :customers, only: [:edit, :update, :withdraw]
+    get 'customers/unsubscribe' => 'customers#unsubscribe'
+    patch 'customers/withdraw' => 'customers#withdraw'
+    resource :customers, only: [:edit, :update]
   end
 
   devise_for :customers, controllers: {
