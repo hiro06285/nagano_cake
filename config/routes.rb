@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
 
+  scope module: :public do
+    root 'homes#top'
+    get 'about' => 'homes#about'
+    get 'customers/my-page' => 'customers#show'
+    resource :customers, only: [:edit, :update, :withdraw]
+  end
+
   devise_for :customers, controllers: {
     sessions: 'customers/sessions',
     passwords: 'customers/passwords',
@@ -19,9 +26,4 @@ Rails.application.routes.draw do
     resources :items, only: [:index, :new, :create, :show, :edit, :update]
   end
 
-  root 'homes#top'
-  get 'about' => 'homes#about'
-  get 'customers/my-page' => 'customers#show'
-  get 'customers/sign_in' => 'customers#unsubscribe'
-  resource :customers, only: [:edit, :update, :withdraw]
 end

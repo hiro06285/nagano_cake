@@ -1,8 +1,9 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-8 offset-md-1">
       <h3>会員情報編集</h3>
-
+    </div>
+    <div class="col-md-10 py-3">
       <%= form_with model: @customer, url: customers_path, local:true do |f| %>
         <h6>氏名</h6>
         <%= f.text_field :last_name %>
@@ -17,10 +18,12 @@
         <h6>電話番号</h6>
         <%= f.telephone_field :telephone_number %>
         <h6>メールアドレス</h6>
-        <%= f.email_field :email %>
+        <%= f.email_field :email %><br>
         <%= f.submit '編集内容を保存', class: "btn btn-success" %>
       <% end %>
-      <%= link_to "退会する", customers_sign_in_path, class: "btn btn-danger" %>
+    </div>
+    <div class="col-md-8">
+      <%= link_to "退会する", class: "btn btn-danger" %>
     </div>
   </div>
 </div>
