@@ -6,7 +6,8 @@ Rails.application.routes.draw do
     get 'customers/my-page' => 'customers#show'
     get 'customers/unsubscribe' => 'customers#unsubscribe'
     patch 'customers/withdraw' => 'customers#withdraw'
-    resource :customers, only: [:edit, :update]
+    resource  :customers, only: [:edit, :update]
+    resources :addresses, only: [:index, :edit, :create, :update, :destroy]
   end
 
   devise_for :customers, controllers: {
