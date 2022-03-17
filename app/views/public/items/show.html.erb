@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-2">
+      <%= attachment_image_tag @item, :image, format: 'jpeg', fallback: "noimage.jpg", class: "img-fluid" %>
+    </div>
+    <div class="col-md-7 offset-md-1">
+      <table>
+        <tr>
+          <td><%= @item.name %></td>
+        </tr>
+        <tr>
+          <td><%= @item.introduction %></td>
+        </tr>
+        <tr>
+          <td>
+            ¥<%= @item.add_tax_non_taxed_price.to_s(:delimited) %>
+            <font size="1">(税込)</font>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <%= form_with model: @cart_item, local:true do |f| %>
+              <%= f.number_field :amount,:in => 1..20 %>
+              <%= f.submit "カートに入れる", class: "btn btn-success" %>
+            <% end %>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
