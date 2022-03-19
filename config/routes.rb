@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     resource  :customers, only: [:edit, :update]
     resources :addresses, only: [:index, :edit, :create, :update, :destroy]
     resources :items, only: [:index, :show]
+    resources :cart_items, only: [:index, :create, :update, :destroy, :destroy_all]
   end
 
   devise_for :customers, controllers: {
