@@ -6,10 +6,11 @@ Rails.application.routes.draw do
     get 'customers/my-page' => 'customers#show'
     get 'customers/unsubscribe' => 'customers#unsubscribe'
     patch 'customers/withdraw' => 'customers#withdraw'
+    delete 'cart_items/destroy_all' => 'cart_items#destroy_all'
     resource  :customers, only: [:edit, :update]
     resources :addresses, only: [:index, :edit, :create, :update, :destroy]
     resources :items, only: [:index, :show]
-    resources :cart_items, only: [:index, :create, :update, :destroy, :destroy_all]
+    resources :cart_items, only: [:index, :create, :update, :destroy]
   end
 
   devise_for :customers, controllers: {
