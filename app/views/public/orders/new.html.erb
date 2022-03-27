@@ -2,12 +2,12 @@
   <div class="row">
     <div class="col-md-8">
       <h3>注文情報入力</h3>
-      <%= form_with model: @order, url: orders_confirm_path, local:true,method: :get do |f| %>
+      <%= form_with model: @order, url: orders_confirm_path, local:true do |f| %>
         <h5>支払方法</h5>
-        <%= f.radio_button :status, "creditcard" %>
-        <%= f.label :status, 'クレジットカード', value: "creditcard" %><br>
-        <%= f.radio_button :status, "bank_transfer" %>
-        <%= f.label :status, '銀行振込', value: "bank_transfer" %>
+        <%= f.radio_button :payment_method, "creditcard" %>
+        <%= f.label :payment_method, 'クレジットカード', value: "creditcard" %><br>
+        <%= f.radio_button :payment_method, "bank_transfer" %>
+        <%= f.label :payment_method, '銀行振込', value: "bank_transfer" %>
         <h5>お届け先</h5>
         <%= f.radio_button :address_number, "0" %>
         <%= f.label :address_number, 'ご自身の住所', value: 0 %><br>
