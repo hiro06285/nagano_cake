@@ -60,16 +60,18 @@
           </tr>
         </thead>
         <tbody>
+          <% @order_detail.each do |detail| %>
           <tr>
-            <td><%= @order_detail.item.name %></td>
-            <td><%= @order_detail.price %></td>
-            <td><%= @order_detail.amount %></td>
+            <td><%= detail.item.name %></td>
+            <td><%= detail.price %></td>
+            <td><%= detail.amount %></td>
             <td>
               <% @sum = 0 %>
-              <% @sum = @order_detail.price * @order_detail.amount %>
+              <% @sum = detail.price * detail.amount %>
               <%= @sum %>
             </td>
           </tr>
+          <% end %>
         </tbody>
       </table>
     </div>
