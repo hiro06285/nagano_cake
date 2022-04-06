@@ -22,6 +22,10 @@
         <%= item.non_taxed_price %><br>
       </div>
     <% end %>
-    <%= paginate @item %>
+  </div>
+  <div class="row">
+    <div class="col-md-3 offset-md-9">
+      <%= link_to 'すべての商品を見る＞', items_path %>
+    </div>
   </div>
 </div>
