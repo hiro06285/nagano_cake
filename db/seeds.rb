@@ -11,6 +11,11 @@
 #  password: 'aaaaaa'
 #)
 
+Admin.create!(
+   email: 'a@a',
+   password: 'aaaaaa',
+   )
+
 Customer.create!(
   email: 'a@aa',
   last_name: '山田',

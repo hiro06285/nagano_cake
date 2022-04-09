@@ -1,4 +1,6 @@
 class Admin::HomesController < ApplicationController
+  before_action :authenticate_admin!,except: [:top]
+
   def top
     @order = Order.page(params[:page]).per(10)
   end

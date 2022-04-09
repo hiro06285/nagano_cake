@@ -1,4 +1,6 @@
 class Admin::ItemsController < ApplicationController
+  before_action :authenticate_admin!,except: [:top]
+
   def index
     @item = Item.page(params[:page]).per(10)
   end
